@@ -1,0 +1,107 @@
+/*
+Theme Name:	starter
+Theme URI:	http://stresslimitdesign.com
+Description:Slick, yet nifty
+Author:		stresslimit
+Author URI:	http://stresslimitdesign.com
+Version:	0.1
+
+		◡◠ ✥ ◠◡
+
+	Table of Contents:
+ 
+		Reset
+		Layout
+		General Styles
+			text
+			links
+			images
+			tables
+			lists
+			forms
+			buttons
+			helpful
+		Section Styles
+			header
+			navigation
+				sub-nav
+			sidebar
+			content
+			footer
+		Page Specific Styles
+			blah
+			callouts
+			another...
+		Utility
+		@media
+ 
+
+ 
+/*  --------------------------------------------------------------
+	RESET
+	-------------------------------------------------------------*/
+
+html, body, body div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video { margin:0; padding:0; border:0; font-size:100%; vertical-align:baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
+blockquote, q { quotes:none; }
+blockquote:before, blockquote:after, q:before, q:after { content:""; content:none; }
+hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
+table { border-collapse:collapse; border-spacing: 0; }
+ins { background-color:#ff9; color:#000; text-decoration:none; }
+del { text-decoration:line-through; }
+body, html { height:100%; overflow: hidden; }
+
+
+* {
+	background-repeat:no-repeat; position:relative; /*vertical-align:middle;*/
+	-moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; /* NOTE: only IE8 and above */
+	-webkit-transition:all 0.2s ease; -moz-transition:all 0.2s ease; -ms-transition:all 0.2s ease; -o-transition:all 0.2s ease;
+}
+
+body { background:#000; }
+
+
+/*  ---------------------------------------------------------
+	LAYOUT
+	-------------------------------------------------------*/
+
+
+
+/*  ---------------------------------------------------------
+	GENERAL STYLES
+	-------------------------------------------------------*/
+
+
+/* --- text --- */
+p {}
+h1, h2, h3, h4 {}
+
+/* --- links --- */
+a					{ color:#00e; }
+a:visited			{ color:#551a8b; }
+a:focus 			{ outline:thin dotted; }
+a:hover, a:active	{ outline:0; }
+
+/* --- helpful --- */
+.clearfix:before, .clearfix:after { content:''; display:block; height:0; visibility:hidden; }
+.clearfix:after { clear:both; }
+.clearfix { zoom:1; }
+
+
+
+
+
+
+/*  ---------------------------------------------------------
+	SECTION STYLES
+	-------------------------------------------------------*/
+
+
+
