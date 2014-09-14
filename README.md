@@ -20,4 +20,7 @@ Many powerfule computer
 
 ######License
 
-Is iport.
+Is Importt. Qualty.
+
+
+also: node app.js
