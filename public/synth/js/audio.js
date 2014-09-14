@@ -65,7 +65,7 @@ var Audio = (function (window) {
 
 	// ----------------------------------------------------------------------
 
-	var Note = function(A,D,S,R){
+	var Note = function(A,D,S,R){		// (vel, env) ... where env = {A:.., D:..., S:..., R:...}
 
 		var osc = context.createBufferSource();
 		osc.loop = true;
@@ -118,11 +118,11 @@ var Audio = (function (window) {
 			osc.buffer = buffer;
 			osc.playbackRate.value = rate;
 
-			env.gain.setTargetValueAtTime(1, now, ampAttack);				// super simple envelope
-			env.gain.setTargetValueAtTime(0, ampAttackTime, ampDecay);
+			env.gain.setTargetAtTime(1, now, ampAttack);					// super simple envelope
+			env.gain.setTargetAtTime(0, ampAttackTime, ampDecay);
 
-			osc.noteOn( now );
-			osc.noteOff( now+ampAttack+(8*ampDecay) );						// 8 * ampDecay's should be enough
+			osc.start( now );
+			osc.stop( now+ampAttack+(8*ampDecay) );						// 8 * ampDecay's should be enough
 
 
 		// TODO  release the buffer after note has played...? GC not removing automatically.
@@ -219,13 +219,14 @@ var Audio = (function (window) {
 			document.addEventListener('keydown', function(e) {
 			// $(document).on('keydown', function(e){
 				console.log(e.which);
-				if(e.which == 32) {
+				if (e.which == 32) {
 					var note = new Note();
 					note.play(60, waveform);
 				}
-				if(e.which >= 48 && e.which <= 57){
+				if (e.which >= 48 && e.which <= 57) {
 					waveform = e.which - 48;
-					$('#dev').html(waveNames[waveform]);
+					var dev = document.getElementById('dev');
+					dev.innerHTML = waveNames[waveform];
 				}
 
 				switch (e.which) {

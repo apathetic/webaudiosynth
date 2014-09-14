@@ -18,8 +18,8 @@ var MALFUNCTION = (function(){
 
 		render();
 		// stats.update();
-
 	}
+
 
 	function render() {
 
@@ -49,11 +49,7 @@ var MALFUNCTION = (function(){
 
 		}
  		renderer.render( scene, camera );
-
 	}
-
-
-
 
 
 	function makeParticles() {
@@ -61,7 +57,7 @@ var MALFUNCTION = (function(){
 		var particle, material;
 
 		// we're gonna move from z position -1000 (far away) to 1000 (where the camera is) and add a random particle at every pos.
-/*
+		/*
 		for ( var zpos= -1000; zpos < 1000; zpos+=20 ) {
 
 			// we make a particle "material" and pass it through the colour and custom particle render function we defined.
@@ -86,38 +82,27 @@ var MALFUNCTION = (function(){
 			// and to the array of particles.
 			particles.push(particle);
 		}
-*/
-				var bird;
-				for ( var i = 0; i < 200; i ++ ) {
+		*/
 
-					bird = particles[ i ] = new THREE.Mesh( new Bird(), new THREE.MeshBasicMaterial( { color:0xff0000 } ) );
-					bird.phase = Math.floor( Math.random() * 62.83 );
-					bird.position.x = Math.random() * 1000 - 500;
-					bird.position.y = Math.random() * 1000 - 500;
-					bird.position.z = Math.random() * 2000 - 1000;
+		var bird;
+		for ( var i = 0; i < 200; i ++ ) {
 
-					// we want the bird travelling along the z-axis
-					bird.rotation.y = Math.atan2( -1, 0 );  // Math.atan2( 1, 0 ); "backwards"
-					bird.rotation.z = 0; // Math.asin( 1 );
+			bird = particles[ i ] = new THREE.Mesh( new Bird(), new THREE.MeshBasicMaterial( { color:0xff0000 } ) );
+			bird.phase = Math.floor( Math.random() * 62.83 );
+			bird.position.x = Math.random() * 1000 - 500;
+			bird.position.y = Math.random() * 1000 - 500;
+			bird.position.z = Math.random() * 2000 - 1000;
 
-
-					bird.doubleSided = true;
-					// bird.scale.x = bird.scale.y = bird.scale.z = 10;
-					scene.add( bird );
-					particles.push(bird);
-				}
+			// we want the bird travelling along the z-axis
+			bird.rotation.y = Math.atan2( -1, 0 );  // Math.atan2( 1, 0 ); "backwards"
+			bird.rotation.z = 0; // Math.asin( 1 );
 
 
-
-
-
-
-
-
-
-
-
-
+			bird.doubleSided = true;
+			// bird.scale.x = bird.scale.y = bird.scale.z = 10;
+			scene.add( bird );
+			particles.push(bird);
+		}
 	}
 
 
@@ -137,7 +122,17 @@ var MALFUNCTION = (function(){
 		// store the mouseX and mouseY position
 		mouseX = event.clientX;
 		mouseY = event.clientY;
-	}
+
+		// console.log(mouseX, mouseY);
+	};
+
+
+	function onResize(event) {
+		console.log('resizeeeing', renderer);
+		console.log('resizeeeing', window.innerWidth, window.innerHeight);
+		// grid();
+		// renderer.setSize( window.innerWidth, window.innerHeight );
+	};
 
 
 	function grid() {
@@ -193,6 +188,7 @@ var MALFUNCTION = (function(){
 
 		// add the mouse move listener
 		document.addEventListener( 'mousemove', onMouseMove, false );
+		document.addEventListener( 'resize', onResize, false );
 
 /*
 		stats = new Stats();
